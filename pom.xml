@@ -75,7 +75,7 @@
         <joda-money.version>0.8</joda-money.version>
         <commons-codec.version>1.9</commons-codec.version>
         <groovy.version>2.3.6</groovy.version>
-        <slf4j.version>1.7.7</slf4j.version>
+        <slf4j.version>1.7.30</slf4j.version>
     </properties>
 
     <repositories>
@@ -311,8 +311,7 @@
                         <phase>compile</phase>
                         <configuration>
                             <tasks>
-                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"
-                                         classpathref="maven.plugin.classpath"/>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
                                 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
                                     <classpath refid="maven.compile.classpath"/>
                                 </taskdef>
@@ -320,9 +319,7 @@
                                     <available file="${basedir}/src/main/groovy" type="dir"/>
                                     <then>
                                         <mkdir dir="${project.build.outputDirectory}"/>
-                                        <groovyc destdir="${project.build.outputDirectory}"
-                                                 srcdir="${basedir}/src/main/groovy/"
-                                                 listfiles="true">
+                                        <groovyc destdir="${project.build.outputDirectory}" srcdir="${basedir}/src/main/groovy/" listfiles="true">
                                             <classpath refid="maven.compile.classpath"/>
                                         </groovyc>
                                     </then>
@@ -338,8 +335,7 @@
                         <phase>test-compile</phase>
                         <configuration>
                             <tasks>
-                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"
-                                         classpathref="maven.plugin.classpath"/>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
                                 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
                                     <classpath refid="maven.test.classpath"/>
                                 </taskdef>
@@ -347,8 +343,7 @@
                                     <available file="${basedir}/src/test/groovy" type="dir"/>
                                     <then>
                                         <mkdir dir="${project.build.testOutputDirectory}"/>
-                                        <groovyc destdir="${project.build.testOutputDirectory}"
-                                                 srcdir="${basedir}/src/test/groovy/" listfiles="true">
+                                        <groovyc destdir="${project.build.testOutputDirectory}" srcdir="${basedir}/src/test/groovy/" listfiles="true">
                                             <classpath refid="maven.test.classpath"/>
 
                                         </groovyc>
