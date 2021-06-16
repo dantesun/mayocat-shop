@@ -85,7 +85,7 @@
         <dependency>
             <groupId>io.federecio</groupId>
             <artifactId>dropwizard-swagger</artifactId>
-            <version>0.5.2</version>
+            <version>0.6</version>
         </dependency>
 
         <!-- Accounts module needed for the annotation resource method dispatcher -->
