@@ -65,7 +65,7 @@
 
         <!-- Dependencies versions -->
         <postgresql.driver.version>9.3-1102-jdbc41</postgresql.driver.version>
-        <dropwizard.version>0.7.1</dropwizard.version>
+        <dropwizard.version>0.9.0</dropwizard.version>
         <jersey.version>1.18.1</jersey.version>
         <!-- Used for multipart contrib module. Needs to be the same as the dropwizard's jersey version -->
         <flyway.version>2.2.1</flyway.version>
@@ -74,7 +74,7 @@
         <elasticsearch.version>0.90.0</elasticsearch.version>
         <joda-money.version>0.8</joda-money.version>
         <commons-codec.version>1.9</commons-codec.version>
-        <groovy.version>2.3.6</groovy.version>
+        <groovy.version>2.4.7</groovy.version>
         <slf4j.version>1.7.7</slf4j.version>
     </properties>
 
@@ -311,8 +311,7 @@
                         <phase>compile</phase>
                         <configuration>
                             <tasks>
-                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"
-                                         classpathref="maven.plugin.classpath"/>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
                                 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
                                     <classpath refid="maven.compile.classpath"/>
                                 </taskdef>
@@ -320,9 +319,7 @@
                                     <available file="${basedir}/src/main/groovy" type="dir"/>
                                     <then>
                                         <mkdir dir="${project.build.outputDirectory}"/>
-                                        <groovyc destdir="${project.build.outputDirectory}"
-                                                 srcdir="${basedir}/src/main/groovy/"
-                                                 listfiles="true">
+                                        <groovyc destdir="${project.build.outputDirectory}" srcdir="${basedir}/src/main/groovy/" listfiles="true">
                                             <classpath refid="maven.compile.classpath"/>
                                         </groovyc>
                                     </then>
@@ -338,8 +335,7 @@
                         <phase>test-compile</phase>
                         <configuration>
                             <tasks>
-                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"
-                                         classpathref="maven.plugin.classpath"/>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
                                 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
                                     <classpath refid="maven.test.classpath"/>
                                 </taskdef>
@@ -347,8 +343,7 @@
                                     <available file="${basedir}/src/test/groovy" type="dir"/>
                                     <then>
                                         <mkdir dir="${project.build.testOutputDirectory}"/>
-                                        <groovyc destdir="${project.build.testOutputDirectory}"
-                                                 srcdir="${basedir}/src/test/groovy/" listfiles="true">
+                                        <groovyc destdir="${project.build.testOutputDirectory}" srcdir="${basedir}/src/test/groovy/" listfiles="true">
                                             <classpath refid="maven.test.classpath"/>
 
                                         </groovyc>
@@ -438,7 +433,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.2</version>
+            <version>1.1.11</version>
         </dependency>
         <!-- External libraries using Commons Logging will delegate to SLF4J -->
         <dependency>
