@@ -132,7 +132,7 @@
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-client</artifactId>
-            <version>1.17</version>
+            <version>1.19.4</version>
             <scope>provided</scope>
         </dependency>
 
@@ -156,13 +156,13 @@
                         <phase>compile</phase>
                         <configuration>
                             <tasks>
-                                <mkdir dir="${basedir}/src/main/groovy" />
+                                <mkdir dir="${basedir}/src/main/groovy"/>
                                 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
-                                    <classpath refid="maven.compile.classpath" />
+                                    <classpath refid="maven.compile.classpath"/>
                                 </taskdef>
-                                <mkdir dir="${project.build.outputDirectory}" />
+                                <mkdir dir="${project.build.outputDirectory}"/>
                                 <groovyc destdir="${project.build.outputDirectory}" srcdir="${basedir}/src/main/groovy/" listfiles="true">
-                                    <classpath refid="maven.compile.classpath" />
+                                    <classpath refid="maven.compile.classpath"/>
                                 </groovyc>
                             </tasks>
                         </configuration>
@@ -175,13 +175,13 @@
                         <phase>test-compile</phase>
                         <configuration>
                             <tasks>
-                                <mkdir dir="${basedir}/src/test/groovy" />
+                                <mkdir dir="${basedir}/src/test/groovy"/>
                                 <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc">
-                                    <classpath refid="maven.test.classpath" />
+                                    <classpath refid="maven.test.classpath"/>
                                 </taskdef>
-                                <mkdir dir="${project.build.testOutputDirectory}" />
+                                <mkdir dir="${project.build.testOutputDirectory}"/>
                                 <groovyc destdir="${project.build.testOutputDirectory}" srcdir="${basedir}/src/test/groovy/" listfiles="true">
-                                    <classpath refid="maven.test.classpath" />
+                                    <classpath refid="maven.test.classpath"/>
                                 </groovyc>
                             </tasks>
                         </configuration>
