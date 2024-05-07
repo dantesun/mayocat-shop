@@ -83,7 +83,7 @@
         <dependency>
             <groupId>org.joda</groupId>
             <artifactId>joda-money</artifactId>
-            <version>0.8</version>
+            <version>0.90</version>
         </dependency>
 
         <!-- Testing dependencies -->
